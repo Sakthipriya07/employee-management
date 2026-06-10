@@ -66,6 +66,12 @@ button {
   background-color: #c9302c;
 }
 
+.save {
+  background-color: #4a90e2;
+  color: white;
+  width: 25%;
+}
+
 form {
   background: white;
   padding: 15px;

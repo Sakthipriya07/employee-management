@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5000/employees";
+const API = "https://6a2820594e1e783349a51de7.mockapi.io/api/v1/employees";
 
 export const getEmployees = () => axios.get(API);
 

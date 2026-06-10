@@ -53,7 +53,7 @@ function EditEmployee() {
         <input name="salary" value={form.salary} onChange={handleChange} />
         <br />
 
-        <button className="add" type="submit">Update</button>
+        <button className="save" type="submit">Update</button>
       </form>
     </div>
   );

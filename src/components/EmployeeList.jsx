@@ -24,7 +24,7 @@ function EmployeeList() {
     <div style={{ padding: "20px" }}>
       <h2>Employee List</h2>
 
-      <button className="button.add" onClick={() => navigate("/add")}>
+      <button className="add" onClick={() => navigate("/add")}>
         Add Employee
       </button>
 
