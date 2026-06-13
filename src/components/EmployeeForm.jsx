@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { addEmployee } from "../services/api";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function EmployeeForm() {
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ function EmployeeForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await addEmployee(form);
+    toast.success("Employee added successfully!");
     navigate("/");
   };
 

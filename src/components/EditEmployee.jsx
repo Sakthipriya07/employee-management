@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getEmployeeById, updateEmployee } from "../services/api";
 import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function EditEmployee() {
   const { id } = useParams();
@@ -30,6 +31,7 @@ function EditEmployee() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     await updateEmployee(id, form);
+    toast.success("Employee updated successfully!");
     navigate("/");
   };
 

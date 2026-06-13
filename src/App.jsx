@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { ToastContainer } from "react-toastify";
 import { Routes, Route } from "react-router-dom";
 import EmployeeList from "./components/EmployeeList";
 import EmployeeForm from "./components/EmployeeForm";
@@ -8,6 +9,8 @@ import EditEmployee from "./components/EditEmployee";
 function App() {
   return (
     <div className="container">
+      <ToastContainer position="top-right" autoClose={3000} />
+      
      <Routes>
        <Route path="/" element={<EmployeeList />} />
        <Route path="/add" element={<EmployeeForm />} />

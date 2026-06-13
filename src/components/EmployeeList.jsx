@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getEmployees, deleteEmployee } from "../services/api";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
@@ -17,6 +18,7 @@ function EmployeeList() {
 
   const handleDelete = async (id) => {
     await deleteEmployee(id);
+    toast.success("Employee deleted successfully!");
     loadData();
   };
 
