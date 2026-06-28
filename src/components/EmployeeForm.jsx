@@ -9,46 +9,124 @@ function EmployeeForm() {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    department: "",
-    role: "",
-    salary: ""
+    phone: "",
+    role: ""
   });
 
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    let newErrors = {};
+
+    const nameRegex = /^[A-Za-z ]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^[6-9]\d{9}$/;
+
+    // Name
+    if (!form.name.trim()) {
+      newErrors.name = "Name is required";
+    } else if (!nameRegex.test(form.name)) {
+      newErrors.name = "Only alphabets and spaces allowed";
+    }
+
+    // Email
+    if (!form.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!emailRegex.test(form.email)) {
+      newErrors.email = "Invalid email format";
+    }
+
+    // Phone
+    if (!form.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (!phoneRegex.test(form.phone)) {
+      newErrors.phone = "Enter valid 10-digit mobile number";
+    }
+
+    // Role
+    if (!form.role.trim()) {
+      newErrors.role = "Role is required";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    });
+
+    setErrors({
+      ...errors,
+      [e.target.name]: ""
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await addEmployee(form);
-    toast.success("Employee added successfully!");
-    navigate("/");
+
+    if (!validate()) return;
+
+    try {
+      await addEmployee(form);
+      toast.success("Employee added successfully!");
+      navigate("/");
+    } catch (error) {
+      toast.error("Failed to add employee.");
+    }
   };
 
   return (
-    <div style={{ padding: 20 }}>
-      <h2>Add Employee</h2>
+    <div style={{ padding: "10px" }}>
+      <h2 style={{ marginBottom: "10px" }}>Add Employee</h2>
 
       <form onSubmit={handleSubmit}>
-        <input name="name" placeholder="Name" onChange={handleChange} />
-        <br />
+        
+        <input
+          name="name"
+          type="text"
+          placeholder="Name"
+          value={form.name}
+          onChange={handleChange}
+        />
+        <p style={{ color: "red" }}>{errors.name}</p>
 
-        <input name="email" placeholder="Email" onChange={handleChange} />
-        <br />
+        <input
+          name="email"
+          type="email"
+          placeholder="Email"
+          value={form.email}
+          onChange={handleChange}
+        />
+        <p style={{ color: "red" }}>{errors.email}</p>
 
-        <input name="department" placeholder="Department" onChange={handleChange} />
-        <br />
+        <input
+          name="phone"
+          type="tel"
+          placeholder="Phone Number"
+          value={form.phone}
+          onChange={handleChange}
+        />
+        <p style={{ color: "red" }}>{errors.phone}</p>
 
-        <input name="role" placeholder="Role" onChange={handleChange} />
-        <br />
+        <input
+          name="role"
+          type="text"
+          placeholder="Role"
+          value={form.role}
+          onChange={handleChange}
+        />
+        <p style={{ color: "red" }}>{errors.role}</p>
 
-        <input name="salary" placeholder="Salary" onChange={handleChange} />
-        <br />
-
-        <button className="save" type="submit">Save</button>
+        <button className="save" type="submit">
+          Save
+        </button>
       </form>
     </div>
   );
 }
 
 export default EmployeeForm;
+

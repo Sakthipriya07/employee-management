@@ -9,13 +9,12 @@ import EditEmployee from "./components/EditEmployee";
 function App() {
   return (
     <div className="container">
-      <ToastContainer position="top-right" autoClose={3000} />
-      
-     <Routes>
-       <Route path="/" element={<EmployeeList />} />
-       <Route path="/add" element={<EmployeeForm />} />
-       <Route path="/edit/:id" element={<EditEmployee />} />
-     </Routes>
+      <ToastContainer position="top-right" autoClose={2000} />
+      <Routes>
+        <Route path="/" element={<EmployeeList />} />
+        <Route path="/add" element={<EmployeeForm />} />
+        <Route path="/edit/:id" element={<EditEmployee />} />
+      </Routes>
     </div>
   );
 }

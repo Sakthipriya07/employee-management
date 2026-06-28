@@ -1,26 +1,110 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
-
-
-body {
-  margin: 0;
-  font-family: 'Fira Code', monospace;
-  background-color: #f4f6f8;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
 }
 
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 5px;
+body{
+  background:#f4f4f4;
+  padding:20px;
 }
 
-h1 {
-  text-align: center;
-  color: #333;
+.container{
+  max-width:1000px;
+  margin:auto;
 }
 
-input,
-select {
+.header-card{
+  background:#fff;
+  padding:15px;
+  border-radius:8px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom:10px;
+}
+
+.header-card h2{
+  margin-bottom:8px;
+}
+
+.header-card p{
+  color:#666;
+}
+
+.toolbar{
+  background:#fff;
+  padding:10px;
+  border-radius:8px;
+  display:flex;
+  gap:10px;
+  margin-bottom:10px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.toolbar input{
+  flex:1;
+  padding:10px;
+  border:1px solid #ddd;
+  border-radius:5px;
+}
+
+.add-btn{
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:10px 20px;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.add-btn:hover{
+  background:#1d4ed8;
+}
+
+.table-card{
+  background:#fff;
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th{
+  background:#fafafa;
+  text-align:left;
+  padding:10px;
+  border-bottom:1px solid #ddd;
+}
+
+td{
+  padding:10px;
+  border-bottom:1px solid #eee;
+}
+
+.edit-btn{
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:8px 12px;
+  border-radius:4px;
+  cursor:pointer;
+}
+
+.delete-btn{
+  background:#dc2626;
+  color:white;
+  border:none;
+  padding:8px 12px;
+  border-radius:4px;
+  cursor:pointer;
+  margin-left:5px;
+}
+
+input{
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -28,59 +112,26 @@ select {
   min-width: 200px;
 }
 
-input:focus,
-select:focus {
+input:focus{
   border-color: #4a90e2;
-}
-
-
-button {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 2px;
-  transition: 0.3s;
-}
-
-.add {
-  background-color: #4a90e2;
-  color: white;
-}
-
-.add:hover {
-  background-color: #357bd8;
-}
-
-.edit {
-  background-color: #f0ad4e;
-  color: white;
-}
-
-.edit:hover {
-  background-color: #ec971f;
-}
-
-.delete {
-  background-color: #d9534f;
-  color: white;
-}
-
-.delete:hover {
-  background-color: #c9302c;
 }
 
 .save {
   background-color: #4a90e2;
   color: white;
   width: 25%;
+  border:none;
+  padding:8px 12px;
+  border-radius:4px;
+  cursor:pointer;
 }
 
+/*form*/
 form {
   background: white;
   padding: 15px;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   display: grid;
   gap: 10px;
@@ -90,33 +141,61 @@ form input {
   width: 90%;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+/* Tablet */
+@media (max-width: 1000px) {
+
+  body {
+    padding: 15px;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+  td button{
+    margin-bottom: 5px;
+  }
 }
 
-th {
-  background-color: #4a90e2;
-  color: white;
-  padding: 12px;
+
+/* Mobile */
+@media (max-width: 576px) {
+
+  .header-card h2 {
+    font-size: 24px;
+  }
+
+  .header-card p {
+    font-size: 14px;
+  }
+  .toolbar {
+    flex-direction: column;
+  }
+
+  .toolbar input,
+  .add-btn {
+    width: 100%;
+  }
+
+  .table-card {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 700px;
+  }
+
+  th,
+  td {
+    white-space: nowrap;
+    font-size: 13px;
+  }
 }
 
-td {
-  padding: 10px;
-  text-align: center;
-  border-bottom: 1px solid #eee;
-}
-
-tr:hover {
-  background-color: #f1f7ff;
-}
-
-.empty {
-  text-align: center;
-  padding: 20px;
-  color: gray;
-}
