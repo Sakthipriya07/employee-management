@@ -86,9 +86,9 @@ function EmployeeList() {
 
           <tbody>
             {filteredEmployees.length > 0 ? (
-              filteredEmployees.map((emp) => (
+              filteredEmployees.map((emp, index) => (
                 <tr key={emp.id}>
-                  <td>{emp.id}</td>
+                  <td>{index + 1}</td>
                   <td>{emp.name}</td>
                   <td>{emp.email}</td>
                   <td>{emp.phone}</td>
