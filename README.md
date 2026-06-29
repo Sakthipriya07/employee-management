@@ -32,4 +32,4 @@ Delete: Remove employee from the system
 
  In this Employee Management System project, I learned how to build CRUD operations using React, handle API requests, manage state, and design UI. 
 
- I also faced challenges in API integration, state updates after delete and edit operations, and form handling. I solved them by improving async handling, re-fetching data after updates, and properly managing controlled components.”
+ I also faced challenges in API integration, state updates after delete and edit operations, and form handling. I solved them by improving async handling, re-fetching data after updates, and properly managing controlled components.
