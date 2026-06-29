@@ -1,16 +1,34 @@
-# React + Vite
+### Employee Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Employee Management System is a web-based application designed to efficiently manage employee data within an organization. It allows users to perform full CRUD (Create, Read, Update, Delete) operations on employee records using a REST API (MockAPI) integrated with a React frontend.
 
-Currently, two official plugins are available:
+##  Key Features:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Add new employee details (name, email, department, role, salary)
+- View all employee records in a structured table format
+- Edit and update existing employee information
+- Delete employee records with confirmation
+- Search employees by name, email and position
+- Success & error notifications
+- Fast and interactive user experience
 
-## React Compiler
+ ## Tech Stack:
+ 
+- React.js (Frontend framework)
+- React Router DOM (Navigation)
+- Axios (API calls)
+- MockAPI (Backend simulation)
+- React Toastify (Notifications)
+- CSS (Styling)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## CRUD Operations:
 
-## Expanding the ESLint configuration
+Create: Add employee using form submission
+Read: Fetch and display employee list from API
+Update: Edit employee details and save changes
+Delete: Remove employee from the system
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+### In this Employee Management System project, I learned how to build CRUD operations using React, handle API requests, manage state, and design UI. 
+
+### I also faced challenges in API integration, state updates after delete and edit operations, and form handling. I solved them by improving async handling, re-fetching data after updates, and properly managing controlled components.”
