@@ -23,10 +23,10 @@ The Employee Management System is a web-based application designed to efficientl
 
 ## CRUD Operations:
 
-Create: Add employee using form submission
-Read: Fetch and display employee list from API
-Update: Edit employee details and save changes
-Delete: Remove employee from the system
+- Create: Add employee using form submission
+- Read: Fetch and display employee list from API
+- Update: Edit employee details and save changes
+- Delete: Remove employee from the system
 
 ## Key learning and challenges faced:
 
